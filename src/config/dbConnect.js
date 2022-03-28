@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
 
-mongoose.connect("mongodb+srv://campos:123@campos.tiu44.mongodb.net/campos-node");
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_CONNECTION_STRING);
 
 let db = mongoose.connection;
 
